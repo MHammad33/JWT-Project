@@ -7,6 +7,7 @@ const authRouter = require("./routes/auth.routes");
 
 // Middleware
 app.use(express.static("public"));
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

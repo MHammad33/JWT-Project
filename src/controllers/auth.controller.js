@@ -1,5 +1,7 @@
 const login = async (req, res) => {
-  res.send("Login route");
+  const { username, password } = req.body;
+
+  res.json({ msg: `Hello ${username}, you have successfully logged in` });
 }
 
 const dashboard = async (req, res) => {
