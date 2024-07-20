@@ -1,1 +1,17 @@
-console.log("Hello, JWT!");
+require("dotenv").config();
+const app = require("./app");
+
+const port = process.env.PORT || 3001;
+
+// Start the server
+const start = async () => {
+  try {
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  } catch (e) {
+    console.error(e.message);
+  }
+}
+
+start();
