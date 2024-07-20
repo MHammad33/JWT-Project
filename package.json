@@ -1,0 +1,13 @@
+{
+	"name": "jwt-project",
+	"version": "1.0.0",
+	"description": "A project emphasizing on Authentication",
+	"main": "index.js",
+	"scripts": {
+		"start": "node src/index.js",
+		"dev": "npx nodemon src/index.js"
+	},
+	"keywords": [],
+	"author": "Hammad",
+	"license": "ISC"
+}
