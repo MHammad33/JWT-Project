@@ -1,12 +1,12 @@
 const jwt = require("jsonwebtoken");
-const CustomApiError = require("../errors/custom-error");
+const { BadRequest, UnauthenticatedError } = require("../errors");
 
 const login = async (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
     // 400 is a bad request
-    throw new CustomApiError("Username and Password Required", 400);
+    throw new BadRequest("Username and Password Required", 400);
   }
 
   // Token Creation
@@ -20,7 +20,7 @@ const login = async (req, res) => {
 const dashboard = async (req, res) => {
   const user = req.user;
   if (!user) {
-    throw new CustomApiError("User does not exist.", 401);
+    throw new UnauthenticatedError("User does not exist.", 401);
   }
 
   const randomNum = Math.floor(Math.random() * 100);
